@@ -8,7 +8,6 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: #f7f3e9; }
 ::selection { background: #dce8a8; color: #173b2b; }
 .eyebrow { font-family: var(--font-mono), monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-.hero-orbit { position: absolute; left: 8%; top: 5%; width: 80%; height: 84%; border: 1px solid rgba(220,232,168,.34); border-radius: 50%; transform: rotate(-20deg); }
 .product-photo { position: relative; height: 310px; overflow: hidden; }
 .sensory-photo { position: relative; min-height: 420px; overflow: hidden; }.sensory-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(23,59,43,.23), transparent 55%); }
 @media (max-width: 640px) { .product-photo { height: 255px; }.sensory-photo { min-height: 300px; } }
