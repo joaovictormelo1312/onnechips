@@ -16,8 +16,8 @@ export type CartItem = {
 export const whatsappNumber = "5586995331002"
 
 export const products: Product[] = [
-  { id: "banana", name: "Chips de Banana", price: 15, image: "/onne/produtos/chips-banana.jpg", alt: "Embalagem de chips de banana Onne Chips" },
-  { id: "macaxeira", name: "Chips de Macaxeira", price: 15, image: "/onne/produtos/chips-macaxeira.jpg", alt: "Embalagem de chips de macaxeira Onne Chips" },
+  { id: "banana", name: "Chips de Banana", price: 13, image: "/onne/produtos/chips-banana.jpg", alt: "Embalagem de chips de banana Onne Chips" },
+  { id: "macaxeira", name: "Chips de Macaxeira", price: 13, image: "/onne/produtos/chips-macaxeira.jpg", alt: "Embalagem de chips de macaxeira Onne Chips" },
 ]
 
 export function formatCurrency(value: number) {
