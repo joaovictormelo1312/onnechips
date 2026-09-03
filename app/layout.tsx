@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { DM_Sans, Playfair_Display, Space_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CartProvider } from "@/components/cart-provider"
+import { CartDrawer } from "@/components/cart-drawer"
 
 const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" })
 const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display" })
@@ -14,5 +16,5 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" suppressHydrationWarning className={`${sans.variable} ${display.variable} ${mono.variable}`}><body><ThemeProvider>{children}</ThemeProvider></body></html>
+  return <html lang="pt-BR" suppressHydrationWarning className={`${sans.variable} ${display.variable} ${mono.variable}`}><body><ThemeProvider><CartProvider>{children}<CartDrawer /></CartProvider></ThemeProvider></body></html>
 }
