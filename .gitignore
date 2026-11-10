@@ -31,6 +31,9 @@ pnpm-debug.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Vercel local project link
+/.vercel/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
