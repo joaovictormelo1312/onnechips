@@ -67,10 +67,7 @@ export function OmbudsmanForm({ onSubmittingChange }: { onSubmittingChange?: (se
     } finally { onSubmittingChange?.(false) }
   }
 
-  return <form ref={formRef} aria-label="Formulário de ouvidoria" aria-busy={submission.status === "sending"} aria-describedby="ombudsman-status ombudsman-guidance" autoComplete="off" noValidate onSubmit={submit}>
-    <p id="ombudsman-status" role="note" className="mb-5 text-sm leading-6 text-ink-muted">Os dados informados serão enviados à Onne Chips e utilizados para analisar e responder sua manifestação. Para dúvidas ou solicitações sobre seus dados, escreva para onnechip@gmail.com.</p>
-    <p id="ombudsman-guidance" className="mb-7 max-w-[680px] text-sm leading-6 text-ink-muted">Informe apenas os dados necessários para explicar sua manifestação. Não inclua senhas ou dados de cartão.</p>
-    <p className="mb-6 text-xs text-ink-muted">Os campos marcados com * são obrigatórios. A validação é feita ao sair de cada campo.</p>
+  return <form ref={formRef} aria-label="Formulário de ouvidoria" aria-busy={submission.status === "sending"} autoComplete="off" noValidate onSubmit={submit}>
     <fieldset disabled={submission.status === "sending"} className="grid gap-6 sm:grid-cols-2">
       {fields.map((field) => {
         const required = "required" in field && field.required
@@ -99,6 +96,6 @@ export function OmbudsmanForm({ onSubmittingChange }: { onSubmittingChange?: (se
     </fieldset>
     {submission.error && <p role="alert" className="mt-6 text-sm leading-6 text-red-800">{submission.error}</p>}
     {submission.status === "success" && <p role="status" className="mt-6 text-sm font-semibold leading-6 text-leaf">Sua manifestação foi encaminhada ao e-mail da loja.</p>}
-    <button type="submit" disabled={submission.status === "sending" || submission.status === "success"} aria-describedby="ombudsman-status" className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-leaf px-6 py-4 text-sm font-semibold text-white hover:bg-leaf-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-leaf disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">{submission.status === "sending" ? "Enviando…" : "Enviar manifestação"}</button>
+    <button type="submit" disabled={submission.status === "sending" || submission.status === "success"} className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-leaf px-6 py-4 text-sm font-semibold text-white hover:bg-leaf-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-leaf disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">{submission.status === "sending" ? "Enviando…" : "Enviar manifestação"}</button>
   </form>
 }

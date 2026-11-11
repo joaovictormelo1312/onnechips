@@ -84,9 +84,7 @@ export function ReviewDialog() {
           <Dialog.Close type="button" aria-label="Fechar formulário de avaliação" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-leaf hover:bg-kraft/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf"><X size={21} aria-hidden="true" /></Dialog.Close>
         </div>
         <div className="min-h-0 overflow-y-auto overscroll-contain p-5 sm:p-7">
-          <form ref={formRef} aria-label="Formulário de avaliação" aria-busy={submission.status === "sending"} aria-describedby="review-status" autoComplete="off" noValidate onSubmit={submit}>
-            <p id="review-status" role="note" className="mb-5 text-sm leading-6 text-ink-muted">Os dados informados serão enviados à Onne Chips para análise da avaliação. A avaliação não será publicada automaticamente; uma eventual publicação seguirá a autorização indicada no formulário. Para dúvidas ou solicitações sobre seus dados, escreva para onnechip@gmail.com.</p>
-            <p className="mb-5 text-xs leading-5 text-ink-muted">Os campos marcados com * são obrigatórios.</p>
+          <form ref={formRef} aria-label="Formulário de avaliação" aria-busy={submission.status === "sending"} autoComplete="off" noValidate onSubmit={submit}>
             <fieldset disabled={submission.status === "sending"} className="space-y-6">
               <div>
                 <label htmlFor="review-name" className="text-sm font-semibold">Nome <span aria-hidden="true">*</span></label>
@@ -121,7 +119,7 @@ export function ReviewDialog() {
             </fieldset>
             {submission.error && <p role="alert" className="mt-5 text-sm leading-6 text-red-800">{submission.error}</p>}
             {submission.status === "success" && <p role="status" className="mt-5 text-sm font-semibold leading-6 text-leaf">Sua avaliação foi encaminhada ao e-mail da loja. Ela não será publicada automaticamente.</p>}
-            <button type="submit" disabled={submission.status === "sending" || submission.status === "success"} aria-describedby="review-status" className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-leaf px-6 py-4 text-sm font-semibold text-white hover:bg-leaf-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-leaf disabled:cursor-not-allowed disabled:opacity-60">{submission.status === "sending" ? "Enviando…" : "Enviar avaliação"}</button>
+            <button type="submit" disabled={submission.status === "sending" || submission.status === "success"} className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-leaf px-6 py-4 text-sm font-semibold text-white hover:bg-leaf-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-leaf disabled:cursor-not-allowed disabled:opacity-60">{submission.status === "sending" ? "Enviando…" : "Enviar avaliação"}</button>
           </form>
         </div>
       </Dialog.Popup>
