@@ -17,7 +17,6 @@ export function TestimonialsSection() {
         {testimonials.map((text) => <figure key={text} className="flex flex-col rounded-xl border border-leaf/20 bg-kraft/15 p-6 sm:p-8">
           <Quote size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5 text-leaf" />
           <blockquote className="flex-1 text-lg leading-8 text-leaf-dark sm:text-xl sm:leading-9"><p>{text}</p></blockquote>
-          <figcaption className="mt-6 text-xs leading-5 text-ink-muted">Trecho de publicação no Instagram</figcaption>
         </figure>)}
       </div>
     </div>
